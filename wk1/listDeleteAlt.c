@@ -9,6 +9,7 @@ struct node {
 struct list {
     struct node *head;
     int length;
+    struct node *tail;
 };
 
 struct list *listNew(void) {
