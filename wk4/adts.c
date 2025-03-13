@@ -11,8 +11,24 @@
 //      return 2, because there are two elements that appear an odd number of
 //      times: 3 (occurs 1 time) and 4 (occurs 3 times).
 int numOddOccurrences(int arr[], int size) {
-    // TODO
-    return 0;
+    // create a new empty set
+    Set s = SetNew();
+
+    // for each element in the array
+    for (int i = 0; i < size; i++) {
+        // if it is in the set, we delete it
+        if (SetContains(s, arr[i])) {
+            SetDelete(s, arr[i]);
+        } else {
+            // if it is not in the set, we insert it
+            SetInsert(s, arr[i]);
+        }
+    }
+
+    // return the set size
+    int res = SetSize(s);
+    SetFree(s);
+    return res;
 }
 
 // This function takes an array of integers and its size,

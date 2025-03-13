@@ -5,6 +5,9 @@
 
 typedef struct set *Set;
 
+// PascalCase
+// camelCase
+
 // Creates a new empty set
 Set SetNew(void);
 
